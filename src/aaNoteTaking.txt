@@ -1,0 +1,96 @@
+Project is for a blog where articles can be listed. 
+
+Articles can be deleted and added#
+
+What I learned:
+
+- How to use "state", the react router, how and where to fetch data, 
+- how to use react hooks like useState, useEffect
+- how to create a custom hook as well.
+
+use VS Code. Extensions:
+Simple React Snippets
+
+VS Code --> Settings --> Emmet: Include Languages --> javascript, javascriptreact
+
+Use createReactApp - it's a command line tool which generates a starter react project that comes fully baked 
+with all the setup and config we need like babel and webpack. We need it to compile our react code in JSX later
+into production ready javascript. without the tool we would have to configure everything ourselves. 
+Requires a modern version of NodeJS installed.
+
+open VS Code and open up the folder you want to make a project in. Then open the console with "ctrl + '".
+
+type "npx create-react-app my-app"
+note: "my-app" can be any name, the name of your project
+type "cd my-app"
+type "npm start"
+
+App.test.js file is not needed
+App.css not needed
+logo.svg not needed
+reportWebVitals.js not needed
+setupTests.js not needed
+
+index.js renders stuff to the DOM, i.e. The ROOT section of the index.html file.
+
+package.json file shows several functions or "scripts" like start, build, test and eject.
+To run the script, you can use the terminal FOR EXAMPLE "npm run start"
+The folder called node_modules contains all of the project dependencies.
+
+When you download a react project from github, the node_moduoles folder is not going to be
+included so you need to install it separately.
+type "npm install" in the terminal to get that folder.
+
+Components start with a capital letter while custom hooks start with a lower case letter.
+JSX very similar to HTML. Use className in JSX because "class" is a reserved name in JS.
+
+A react component is essentially just a function. Something must always be returned,
+and generally it's almost always going to be a JSX template. Then at the bottom 
+we need to export it so it can be used elsewhere. 
+
+If you want to use variables in JSX that have been established using JS, we can just 
+use curly braces and just enter the variable. Cannot output variables which are 
+booleans or objects. BUT for objects, the value of a key inside of an object can be
+displayed.
+
+All components start with a Stateless Functional Component template. Using the extension
+from before, downloaded into VS Code, you can just type "sfc", press enter and the
+template for a component will be written out.
+
+Components need to imported into the App root component and then nest it somewhere inside
+the template.
+
+Use camelCasing when using in-line styles for JSX --> 
+style={{backgroundColor: '#f1356d', borderRadius: 8px}} etc.
+
+Use arrow functions for events like click events. 
+<button onClick={handleClick}>Click Here</button>
+don't use brackets next to the function name.
+
+If you want to pass in an argument into the function, need to wrap it inside an anonymous
+funciton:
+<button onClick={() => handleClick('Mario')}>Click Here</button>
+
+Event parameter becomes available when using any event in React:
+const handleClick = (name, e) => console.log('Hello' + name, e.target, e.ctrlKey)
+<button onClick={(e) => handleClick('Mario', e)}>Click Here</button>
+
+The state of a component is the data being used in that component at that point in time.
+They are used when you have variables or data you wanted to change over time or in
+reaction to some event like a user clicking a button.
+
+For changes to be shown in the browser as and when they happen we need to make variables
+reactive. For this we use hooks:
+const [name, setName] = useState('Mario'); <--- 'Mario' is the initial value.
+later in the code, you can write something like:
+setName('Luigi') to change the state. React will detect this and update the browser.
+
+For a JS object, the key in a key-value pair can also be said to be a property.
+
+To open up a JSON server, open a new terminal and type in:
+'npc json-server --watch data/db.json --port 8000'
+JSON server provides us with different "endpoints" such as:
+/blogs GET          // This fetches all blogs
+/blogs/{id} GET     // This fetches a single blog
+/blogs POST         // This adds a new blog
+/blogs/{id} DELETE  // This deletes a blog
