@@ -16,7 +16,7 @@
 }
 
 .navbar h1 {
-  color: #f1356d;
+  color: #4b9cb4;
 }
 
 .navbar .links {
@@ -30,7 +30,7 @@
 }
 
 .navbar a:hover {
-  color: #f1356c;
+  color: #4b9cb4;
 }
 
 .content {
@@ -52,7 +52,7 @@
 
 .blog-preview h2 {
   font-size: 20px;
-  color: #f1356d;
+  color: #4b9cb4;
   margin-bottom: 8px;
 }
 .blog-preview a{
@@ -62,7 +62,7 @@
 /* Blog Details Page */
 .blog-details h2 {
   font-size: 20px;
-  color: #f1356d;
+  color: #4b9cb4;
   margin-bottom: 10px;
 }
 
@@ -71,7 +71,7 @@
 }
 
 .blog-details button {
-  background: #f1356d;
+  background: #4b9cb4;
   color: #fff;
   border: 0;
   padding: 8px;
@@ -93,7 +93,7 @@
 
 .create h2 {
   font-size: 20px;
-  color: #f1356d;
+  color: #4b9cb4;
   margin-bottom: 30px;
 }
 
@@ -101,13 +101,13 @@
   width: 100%;
   padding: 6px 10px;
   margin: 10px 0;
-  border: 1px;
+  border: 5px;
   box-sizing: border-box;
-  display: block;
+  display: flex;
 }
 
 .create button {
-  background: #f1356d;
+  background: #4b9cb4;
   color: #fff;
   border: 0;
   padding: 8px;

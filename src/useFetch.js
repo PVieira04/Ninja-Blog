@@ -6,7 +6,8 @@ const useFetch = (url) => {
     const [error, setError] = useState(null);
 
     useEffect(() => { //This hook runs a function for every render of the component.
-        const abortCont = new AbortController();
+        const abortCont = new AbortController(); // We can associate the function with a specific fetch request. We can use it to stop the fetch. To do this we add a second argument to fetch as shown below.
+        //console.log(abortCont);
         setTimeout(() => {
             fetch(url, { signal: abortCont.signal }) // This is the fetch API. This is asynchronous meaning it takes some time to do so we can use the .then block
                 .then(res => {
@@ -15,7 +16,7 @@ const useFetch = (url) => {
                     }
                     return res.json(); // This passes the data into a JS object for us. This is also asynchronous.
                 })
-                .then(data => {
+                .then(data => { // "data" here is ok to use because this is a local version inside this function
                     setData(data);
                     setIsPending(false);
                     setError(null);
@@ -31,13 +32,13 @@ const useFetch = (url) => {
                         setError(err.message);
                     }
                 })
-        },);
+        }, 1000);
 
-        return () => abortCont.abort();
+        return () => abortCont.abort(); // This aborts the fetch.
 
     }, [url]); // Whenever the contents of "url" changes, the useEffect hook will run. "url" is known as a dependency of useEffect.
 
-    return { data, isPending, error };
+    return { data, isPending, error }; // We need to return these properties because we want to use them every time we invoke the useFetch custom hook.
 }
 
 export default useFetch;

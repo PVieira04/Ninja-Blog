@@ -2,15 +2,15 @@ import { useState } from "react";
 import { useNavigate } from 'react-router-dom';
 
 const Create = () => {
-    const [title, setTitle] = useState('');
+    const [title, setTitle] = useState(''); // Dynamic value so that the title field can be updated and saved.
     const [body, setBody] = useState('');
-    const [author, setAuthor] = useState('Mario');
+    const [author, setAuthor] = useState('Patrick');
     const [isPending, setIsPending] = useState(false);
     const navigate = useNavigate();
 
     const handleSubmit = (e) => {
-        e.preventDefault();
-        const blog = { title, body, author };
+        e.preventDefault(); // The default is to refresh the page after clicking the button. We want to prevent that.
+        const blog = { title, body, author }; // Allows us to save the three variables into the const called blog.
 
         setIsPending(true);
 
@@ -33,7 +33,7 @@ const Create = () => {
                     type="text"
                     required
                     value={title}
-                    onChange={(e) => setTitle(e.target.value)}
+                    onChange={(e) => setTitle(e.target.value)} // This allows us to set the title as what is written in the "title" field.
                 />
                 <label>Blog Body:</label>
                 <textarea
@@ -46,14 +46,15 @@ const Create = () => {
                     value={author}
                     onChange={(e) => setAuthor(e.target.value) }
                 >
-                    <option value="Mario">Mario</option>
-                    <option value="Yoshi">Yoshi</option>
+                    <option value="Patrick">Patrick</option>
+                    <option value="Stephanie">Stephanie</option>
                 </select>
                 { !isPending && <button>Add Blog</button> }
                 { isPending && <button disabled>Adding Blog...</button> }
-                <p>{ title }</p>
-                <p>{ body }</p>
-                <p>{ author }</p>
+                <h3><br />Blog Post: Preview</h3>
+                <p><br />{ title }</p>
+                <p><br />{ body }</p>
+                <p><br />Written by { author }</p>
             </form>
         </div>
      );

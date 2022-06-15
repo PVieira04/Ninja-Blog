@@ -2,14 +2,20 @@
   "blogs": [
     {
       "title": "My First Blog",
-      "body": "Blah blah blah",
-      "author": "Mario",
+      "body": "So I finally created my own blog. I will be using this as a space to document all of my noteworthy learning and thoughts through my journey in web development. Thanks for stopping by!",
+      "author": "Patrick",
       "id": 1
     },
     {
-      "title": "Opening Party!",
-      "body": "blah blah blah",
-      "author": "Yoshi",
+      "title": "Upgrading the React Router",
+      "body": "With React Router being upgraded to version 6, it feels much more intunitive to use. Instead of using strange words like 'switch', we have things like 'routes' and 'navigate'. I'll be happy if it doesn't change after this!",
+      "author": "Patrick",
+      "id": 2
+    },
+    {
+      "title": "Using React with Node.JS",
+      "body": "This was a very interesting project as I learned how to have a .json file and ask React to fetch data from it. Data in the file is mutable as well so I can add items of delete them. Amazing!",
+      "author": "Stephanie",
       "id": 2
     }
   ]
